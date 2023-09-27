@@ -1,7 +1,7 @@
 <?php
 include '../connect.php';
 $dep_nmae = filterRequest('dep_name');
-$photo = imageUploadDep('dep_photo', 'department_image/');
+$photo = imageUploadDep('dep_photo', 'department_image');
 $stmt = $con->prepare("SELECT * FROM  `department` WHERE `dep_name` = ?");
 $stmt->execute(array($dep_nmae));
 $count = $stmt->rowCount();
@@ -34,8 +34,9 @@ function imageUploadDep($imageRequest, $path)
         $msgError = "size";
     }
     if (empty($msgError)) {
-        move_uploaded_file($imagetmp,  "../upload/$path" . $imagename);
-        return "https://localhost/dressing_backend/upload/$path/$imagename";
+
+        move_uploaded_file($imagetmp,  "../upload/$path/" . $imagename);
+        return "http://localhost:8000/upload/$path/$imagename";
     } else {
         return "fail";
     }

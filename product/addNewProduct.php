@@ -52,7 +52,7 @@ function imageUploadPrd($imageRequest, $path)
     }
     if (empty($msgError)) {
         move_uploaded_file($imagetmp,  "../upload/$path" . $imagename);
-        return "https://localhost/dressing_backend/upload/$path/$imagename";
+        return "https://localhost:8000/upload/$path/$imagename";
     } else {
         return "fail";
     }

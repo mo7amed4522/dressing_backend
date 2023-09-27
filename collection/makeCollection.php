@@ -25,27 +25,6 @@ $count = $stmt->rowCount();
 if ($count > 0) {
     echo json_encode(array("status" => "failure", "msg" => "The Name of this Collection is EXIST", "data" => null));
 } else {
-    /*     $data = array(
-        "collection_name" => $collection_name,
-        "photo" => $photo,
-        "description" => $description,
-        "rate" => $rate,
-        "nameProduct1" => $nameProduct1,
-        "nameProduct2" => $nameProduct2,
-        "nameProduct3" => $nameProduct3,
-        "nameProduct4" => $nameProduct4,
-        "nameProduct5" => $nameProduct5,
-        "nameProduct6" => $nameProduct6,
-        "nameProduct7" => $nameProduct7,
-        "nameProduct8" => $nameProduct8,
-        "nameProduct9" => $nameProduct9,
-        "nameProduct10" => $nameProduct10,
-        "is_show" => $is_show,
-        "price_1" => $price_1,
-        "price_2" => $price_2,
-    );
-
-    insertData("collection", $data); */
 
     if ($nameProduct2 == null && $nameProduct3 == null && $nameProduct4 == null && $nameProduct5 == null && $nameProduct6 == null && $nameProduct7 == null && $nameProduct8 == null && $nameProduct9 == null && $nameProduct10 == null) {
         $data = array(

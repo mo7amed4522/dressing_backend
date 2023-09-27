@@ -12,7 +12,7 @@ function getAllINTEREST($where = null, $values = null, $json = true)
 {
     global $con;
     $data = array();
-    $stmt = $con->prepare("SELECT  product.prod_id,product.name,product.photo,product.rate FROM  product INNER JOIN `interest` on product.prod_id = interest.prod_id  WHERE   $where");
+    $stmt = $con->prepare("SELECT  product.prod_id,product.name,product.image,product.rate FROM  product INNER JOIN `interest` on product.prod_id = interest.prod_id  WHERE   $where");
     $stmt->execute($values);
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $count  = $stmt->rowCount();
