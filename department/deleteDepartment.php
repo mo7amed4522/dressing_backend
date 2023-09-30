@@ -10,7 +10,7 @@ $stmt->execute(array($dep_id));
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
 $count  = $stmt->rowCount();
 if ($count > 0) {
-    deleteFile('../upload/department_image/', $data);
+    deleteFile('../upload/department_image/', $data['namePho']);
     deleteData('department', "`dep_id` = $dep_id");
 } else {
 }
